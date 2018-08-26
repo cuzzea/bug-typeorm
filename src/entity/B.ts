@@ -12,7 +12,7 @@ export class B {
 
     @OneToOne(
         (type: any) => A,
-        async (o: A) => await o.b)
+        (o: A) => o.b)
     a: Promise<A>;
   
 }

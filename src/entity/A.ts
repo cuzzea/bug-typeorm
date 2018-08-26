@@ -15,5 +15,5 @@ export class A {
         async (o: B) => await o.a
     )
     @JoinColumn()
-    public b: Promise<B>;
+    public b: B;
 }
