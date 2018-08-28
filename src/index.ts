@@ -11,19 +11,16 @@ createConnection().then(async connection => {
     console.log("Inserting a new user into the database...");
     const a = new A();
     a.name = "something";
-    const aCreated = aRepo.create(a);
-    await aRepo.save(aCreated);
-    
-    const as = await aRepo.find();
-    console.log("Loaded A: ", as);
 
     const b = new B();
     b.name = "something";
-    const bCreated = bRepo.create(b);
-    bCreated.a =  Promise.resolve(as[0]);
-    await bRepo.save(bCreated);
     
-    const as2 = await aRepo.find();
+    a.b =  Promise.resolve(b);
+
+    console.log(a);
+    await aRepo.save(a);
+    
+    const as2 = await aRepo.find({relations: ['b']});
     console.log("Loaded A: ", as2);
     
 }).catch(error => console.log(error));

@@ -3,17 +3,13 @@ import { B } from './B';
 
 @Entity()
 export class A {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @Column()
+  name: string;
 
-    @Column()
-    name: string;
-
-    @OneToOne(
-        (type: any) => B,
-        async (o: B) => await o.a
-    )
-    @JoinColumn()
-    public b: Promise<B>;
+  @OneToOne(() => B, async (o: B) => o.a, { cascade: true })
+  @JoinColumn()
+  public b: Promise<B>;
 }
