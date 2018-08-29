@@ -20,7 +20,7 @@ createConnection().then(async connection => {
     const b = new B();
     b.name = "something";
     const bCreated = bRepo.create(b);
-    bCreated.a =  Promise.resolve(as[0]);
+    bCreated.a = as[0];
     await bRepo.save(bCreated);
     
     const as2 = await aRepo.find();

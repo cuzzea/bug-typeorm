@@ -13,6 +13,6 @@ export class B {
     @OneToOne(
         (type: any) => A,
         (o: A) => o.b)
-    a: Promise<A>;
+    a: A;
   
 }

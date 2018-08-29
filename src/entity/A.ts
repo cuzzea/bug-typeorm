@@ -12,7 +12,7 @@ export class A {
 
     @OneToOne(
         (type: any) => B,
-        async (o: B) => await o.a
+        (o: B) => o.a
     )
     @JoinColumn()
     public b: B;
