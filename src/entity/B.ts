@@ -9,6 +9,6 @@ export class B {
   @Column()
   name: string;
 
-  @OneToOne((type: any) => A, async (o: A) => o.b, { cascade: true })
+  @OneToOne(() => A, (o: A) => o.b)
   a: Promise<A>;
 }

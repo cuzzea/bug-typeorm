@@ -3,14 +3,14 @@
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
    "devDependencies": {
-      "ts-node": "3.3.0",
-      "@types/node": "^8.0.29",
-      "typescript": "2.5.2"
+      "@types/node": "^10.10.1",
+      "ts-node": "7.0.1",
+      "typescript": "3.0.3"
    },
    "dependencies": {
       "typeorm": "0.2.7",
-      "reflect-metadata": "^0.1.10",
-      "mysql": "^2.14.1"
+      "reflect-metadata": "^0.1.12",
+      "mysql": "^2.16.0"
    },
    "scripts": {
       "start": "ts-node src/index.ts"

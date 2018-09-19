@@ -9,7 +9,7 @@ export class A {
   @Column()
   name: string;
 
-  @OneToOne(() => B, async (o: B) => o.a, { cascade: true })
+  @OneToOne(() => B, (o: B) => o.a)
   @JoinColumn()
   public b: Promise<B>;
 }
